@@ -1,13 +1,13 @@
 package io.github.admgk;
 
-import org.eclipse.jetty.ee10.annotations.AnnotationConfiguration;
-import org.eclipse.jetty.ee10.webapp.*;
+import org.eclipse.jetty.annotations.AnnotationConfiguration;
+import org.eclipse.jetty.webapp.*;
 import org.eclipse.jetty.server.Server;
 
 public class App {
     public static void main(String[] args) throws Exception {
         var webapp = new WebAppContext();
-        webapp.setBaseResourceAsString("src/main/webapp");
+        webapp.setResourceBase("src/main/webapp");
         webapp.setContextPath("/");
         webapp.setConfigurations(new Configuration[] {
                 new AnnotationConfiguration(),

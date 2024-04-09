@@ -1,9 +1,12 @@
 package io.github.admgk.indicator;
 
 import io.github.admgk.utils.Period;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -11,27 +14,40 @@ import java.sql.Date;
 @Entity
 @Table(name="annual_inflation")
 class AnnualInflation extends Inflation {
-    static final String NAME = "Inflation";
-    static final Period PERIOD_TYPE = Period.YEAR;
+//    static final String NAME = "Inflation";
+//    static final Period PERIOD_TYPE = Period.YEAR;
 
     @Id
-    Date cpi_period;
+    @GeneratedValue(generator = "inc")
+    @GenericGenerator(name = "inc", strategy = "increment")
+    Integer id;
+
+    String cpi_period;
     BigDecimal cpi_value;
 
-    AnnualInflation() {
+    public AnnualInflation() {
 
     }
 
-    public AnnualInflation(Date cpi_period, BigDecimal cpi_value) {
+    public AnnualInflation(Integer id, String cpi_period, BigDecimal cpi_value) {
+        this.id = id;
         this.cpi_period = cpi_period;
         this.cpi_value = cpi_value;
     }
 
-    public Date getPeriod() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getPeriod() {
         return cpi_period;
     }
 
-    public void setPeriod(Date cpi_period) {
+    public void setPeriod(String cpi_period) {
         this.cpi_period = cpi_period;
     }
 

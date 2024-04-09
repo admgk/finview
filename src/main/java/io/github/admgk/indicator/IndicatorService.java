@@ -4,12 +4,13 @@ import io.github.admgk.utils.IndName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
 import java.util.Optional;
 
 class IndicatorService {
     private final Logger logger = LoggerFactory.getLogger(IndicatorService.class);
 
-    IndicatorDTO invokeRepositoryOf(String indicator) {
+    List<AnnualInflation> invokeRepositoryOf(String indicator) {
         var indName = validateIndParameter(indicator);
         switch (indName) {
             case INFLATION:

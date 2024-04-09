@@ -1,4 +1,5 @@
 CREATE TABLE annual_inflation (
-    cpi_period DATE PRIMARY KEY,
+    id INT PRIMARY KEY auto_increment,
+    cpi_period VARCHAR(20),
     cpi_value NUMERIC(20, 1)
 );
