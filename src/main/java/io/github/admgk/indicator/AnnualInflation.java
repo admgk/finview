@@ -14,8 +14,8 @@ import java.sql.Date;
 @Entity
 @Table(name="annual_inflation")
 class AnnualInflation extends Inflation {
-//    static final String NAME = "Inflation";
-//    static final Period PERIOD_TYPE = Period.YEAR;
+    static final String NAME = "Inflation";
+    static final Period PERIOD_TYPE = Period.YEAR;
 
     @Id
     @GeneratedValue(generator = "inc")
