@@ -1,0 +1,11 @@
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2013-01-01', 3650.06);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2014-01-01', 3783.46);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2015-01-01', 3899.78);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2016-01-01', 4047.21);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2017-01-01', 4271.51);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2018-01-01', 4585.03);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2019-01-01', 4918.17);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2020-01-01', 5167.47);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2021-01-01', 5662.53);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2022-01-01', 6346.15);
+INSERT INTO average_salary (salary_period, salary_value) VALUES ('2023-01-01', 7155.48);

@@ -3,11 +3,12 @@ package io.github.admgk.indicator;
 import io.github.admgk.utils.Period;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+@Entity
+@Table(name="average_salary")
 class AverageSalary extends Indicator {
     static final String NAME = "Average Salary";
     static final Period PERIOD_TYPE = Period.YEAR;
@@ -17,7 +18,10 @@ class AverageSalary extends Indicator {
     @GenericGenerator(name = "inc", strategy = "increment")
     Integer id;
 
+    @Column(name = "salary_period")
     Date averageSalaryPeriod;
+
+    @Column(name = "salary_value")
     BigDecimal averageSalaryValue;
 
     public AverageSalary() {}
