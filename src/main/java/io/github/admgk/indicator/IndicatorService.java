@@ -19,6 +19,9 @@ class IndicatorService {
             case INFLATION:
                 indList = new AnnualInflationRepository().findAll();
                 return convertToDTO(indList);
+            case AVERAGE_SALARY:
+                indList = new AverageSalaryRepository().findAll();
+                return convertToDTO(indList);
             default:
                 indList = new AnnualInflationRepository().findAll();
                 return convertToDTO(indList);

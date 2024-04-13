@@ -1,5 +1,6 @@
 package io.github.admgk.utils;
 
 public enum IndName {
-    INFLATION
+    INFLATION,
+    AVERAGE_SALARY
 }

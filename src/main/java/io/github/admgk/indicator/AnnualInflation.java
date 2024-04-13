@@ -40,6 +40,7 @@ class AnnualInflation extends Inflation {
         this.id = id;
     }
 
+    @Override
     public Date getPeriod() {
         return cpi_period;
     }
@@ -48,6 +49,7 @@ class AnnualInflation extends Inflation {
         this.cpi_period = cpi_period;
     }
 
+    @Override
     public BigDecimal getValue() {
         return cpi_value;
     }
