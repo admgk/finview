@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class AnnualInflationRepository {
-    List<AnnualInflation> findAll() {
+    List<? extends Indicator> findAll() {
         var session = HibernateUtil.getSessionFactory().openSession();
         var transaction = session.beginTransaction();
 

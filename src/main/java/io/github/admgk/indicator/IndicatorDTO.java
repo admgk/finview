@@ -3,15 +3,15 @@ package io.github.admgk.indicator;
 import io.github.admgk.utils.Period;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Map;
 
 class IndicatorDTO {
     String name;
     Period periodType;
-    Map<Date, BigDecimal> values;
+    Map<LocalDate, BigDecimal> values;
 
-    public IndicatorDTO(String name, Period periodType, Map<Date, BigDecimal> values) {
+    public IndicatorDTO(String name, Period periodType, Map<LocalDate, BigDecimal> values) {
         this.name = name;
         this.periodType = periodType;
         this.values = values;
@@ -33,11 +33,11 @@ class IndicatorDTO {
         this.periodType = periodType;
     }
 
-    public Map<Date, BigDecimal> getValues() {
+    public Map<LocalDate, BigDecimal> getValues() {
         return values;
     }
 
-    public void setValues(Map<Date, BigDecimal> values) {
+    public void setValues(Map<LocalDate, BigDecimal> values) {
         this.values = values;
     }
 }

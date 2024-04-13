@@ -11,4 +11,8 @@ abstract class Indicator {
 
     Date period;
     BigDecimal value;
+
+    abstract Date getPeriod();
+    abstract BigDecimal getValue();
+
 }

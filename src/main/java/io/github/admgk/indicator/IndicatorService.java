@@ -4,19 +4,24 @@ import io.github.admgk.utils.IndName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
+import java.util.TreeMap;
 
 class IndicatorService {
     private final Logger logger = LoggerFactory.getLogger(IndicatorService.class);
 
-    List<AnnualInflation> invokeRepositoryOf(String indicator) {
+    IndicatorDTO invokeRepositoryOf(String indicator) {
         var indName = validateIndParameter(indicator);
+        List<? extends Indicator> indList;
         switch (indName) {
             case INFLATION:
-                return new AnnualInflationRepository().findAll();
+                indList = new AnnualInflationRepository().findAll();
+                return convertToDTO(indList);
             default:
-                return new AnnualInflationRepository().findAll();
+                indList = new AnnualInflationRepository().findAll();
+                return convertToDTO(indList);
         }
     }
 
@@ -34,5 +39,15 @@ class IndicatorService {
             }
         }
         return IndName.INFLATION;
+    }
+
+    IndicatorDTO convertToDTO(List<? extends Indicator> indList) {
+        var name = AnnualInflation.NAME;
+        var periodType = AnnualInflation.PERIOD_TYPE;
+        var values = new TreeMap<LocalDate, BigDecimal>();
+        for (Indicator ind : indList) {
+            values.put(ind.getPeriod().toLocalDate(), ind.getValue());
+        }
+        return new IndicatorDTO(name, periodType, values);
     }
 }
