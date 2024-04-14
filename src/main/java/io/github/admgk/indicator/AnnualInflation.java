@@ -19,17 +19,20 @@ class AnnualInflation extends Inflation {
     @GenericGenerator(name = "inc", strategy = "increment")
     Integer id;
 
-    Date cpi_period;
-    BigDecimal cpi_value;
+    @Column(name = "cpi_period")
+    Date cpiPeriod;
+
+    @Column(name = "cpi_value")
+    BigDecimal cpiValue;
 
     public AnnualInflation() {
 
     }
 
-    public AnnualInflation(Integer id, Date cpi_period, BigDecimal cpi_value) {
+    public AnnualInflation(Integer id, Date cpiPeriod, BigDecimal cpiValue) {
         this.id = id;
-        this.cpi_period = cpi_period;
-        this.cpi_value = cpi_value;
+        this.cpiPeriod = cpiPeriod;
+        this.cpiValue = cpiValue;
     }
 
     public Integer getId() {
@@ -52,19 +55,19 @@ class AnnualInflation extends Inflation {
 
     @Override
     public Date getPeriod() {
-        return cpi_period;
+        return cpiPeriod;
     }
 
-    public void setPeriod(Date cpi_period) {
-        this.cpi_period = cpi_period;
+    public void setPeriod(Date cpiPeriod) {
+        this.cpiPeriod = cpiPeriod;
     }
 
     @Override
     public BigDecimal getValue() {
-        return cpi_value;
+        return cpiValue;
     }
 
-    public void setValue(BigDecimal cpi_value) {
-        this.cpi_value = cpi_value;
+    public void setValue(BigDecimal cpiValue) {
+        this.cpiValue = cpiValue;
     }
 }
