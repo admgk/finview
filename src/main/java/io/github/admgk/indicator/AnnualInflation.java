@@ -41,6 +41,16 @@ class AnnualInflation extends Inflation {
     }
 
     @Override
+    String getNAME() {
+        return NAME;
+    }
+
+    @Override
+    Period getPERIOD_TYPE() {
+        return PERIOD_TYPE;
+    }
+
+    @Override
     public Date getPeriod() {
         return cpi_period;
     }

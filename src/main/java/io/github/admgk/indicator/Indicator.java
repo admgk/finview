@@ -6,11 +6,14 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 abstract class Indicator {
-    static String name;
-    static Period periodRange;
+    static String NAME;
+    static Period PERIOD_TYPE;
 
     Date period;
     BigDecimal value;
+
+    abstract String getNAME();
+    abstract Period getPERIOD_TYPE();
 
     abstract Date getPeriod();
     abstract BigDecimal getValue();

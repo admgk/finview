@@ -45,8 +45,8 @@ class IndicatorService {
     }
 
     IndicatorDTO convertToDTO(List<? extends Indicator> indList) {
-        var name = AnnualInflation.NAME;
-        var periodType = AnnualInflation.PERIOD_TYPE;
+        var name = indList.get(0).getNAME();
+        var periodType = indList.get(0).getPERIOD_TYPE();
         var values = new TreeMap<LocalDate, BigDecimal>();
         for (Indicator ind : indList) {
             values.put(ind.getPeriod().toLocalDate(), ind.getValue());

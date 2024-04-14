@@ -41,6 +41,16 @@ class AverageSalary extends Indicator {
     }
 
     @Override
+    String getNAME() {
+        return NAME;
+    }
+
+    @Override
+    Period getPERIOD_TYPE() {
+        return PERIOD_TYPE;
+    }
+
+    @Override
     public Date getPeriod() {
         return averageSalaryPeriod;
     }
